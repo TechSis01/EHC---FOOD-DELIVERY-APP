@@ -72,10 +72,12 @@ h2 {
   }
   .thin {
     font-weight:400;
+    
   }
   .small {
     font-size:12px;
     font-size:.8rem;
+    line-height: 1.3rem;
   }
   .half-input-table {
     border-collapse:collapse;
@@ -130,7 +132,6 @@ h2 {
     height:1px;
     width:100%;
     margin-top:10px;
-    margin-bottom:10px;
     background:#ddd;
   }
   .order-table td:last-of-type {
@@ -168,7 +169,7 @@ h2 {
   }
   
   .total {
-    margin-top:25px;
+    margin-top: 25px;
     font-size:20px;
     font-size:1.3rem;
     position:absolute;
@@ -177,11 +178,12 @@ h2 {
     left:35px;
   }
   .dense {
-    line-height:1.2em;
+    line-height:1.5rem;
     font-size:16px;
     font-size:1rem;
-    margin-top: 0.2rem;
+    font-weight: 500;
   }
+  
   .input-field {
     background:rgba(246, 242, 242, 0.1);
     margin-bottom:10px;
@@ -192,6 +194,7 @@ h2 {
     border:none;
     padding:5px 10px 5px 10px;
     color:#fff;
+    border-radius: 1rem;
     border: 0.01rem solid #000;
     box-sizing:border-box;
     width:100%;
