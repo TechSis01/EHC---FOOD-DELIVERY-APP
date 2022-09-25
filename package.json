@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@weavy/dropin-js": "^13.0.0"
+  }
+}
