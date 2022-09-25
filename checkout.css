@@ -23,6 +23,7 @@ h2 {
   }
   .container {
     height:100%;
+  
     -webkit-box-pack:center;
     -webkit-justify-content:center;
         -ms-flex-pack:center;
@@ -85,8 +86,8 @@ h2 {
     width:50%;
   }
   .window {
-    height:540px;
-    width:800px;
+    height: 550px;
+    width:60%;
     background:#fff;
     display:-webkit-box;
     display:-webkit-flex;
