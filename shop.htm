@@ -11,7 +11,10 @@
     <!-------------FONT AWESOME CDN LINK-------------------------------->
     <script src="https://kit.fontawesome.com/597098b101.js" crossorigin="anonymous"></script>
 
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+
     <!-------------CSS LINK------->
+    <link rel="stylesheet" href="./chatbox.css">
     <link rel="stylesheet" href="./shop.css">
     <title>Shop</title>
 
@@ -240,6 +243,65 @@
             </div>
         </div>
     </section>
+
+    <!-- CHAT BAR BLOCK -->
+<div class="chat-bar-collapsible">
+    <button id="chat-button" type="button" class="collapsible">Chat with us!
+        <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        <iconify-icon icon="akar-icons:arrow-down" class="icon-down"></iconify-icon>
+        <!-- <i id="chat-icon" style="color: #fff;"  class="fa-regular fa-down"></i> -->
+
+    </button>
+    <div class="content" id="content">
+        <div class="full-chat-block">
+            <!-- Message Container -->
+            <div class="outer-container">
+                <div class="chat-container">
+                    <!-- Messages -->
+                    <div id="chatbox" >
+                        <h5 id="chat-timestamp"></h5>
+                        <div id="botStarterMessage" class="botText first">
+                            <p class="bot-note">hello, welcome to Burgerlie..</p>
+
+                              <ol>
+                                <p>Here is my menu list</p>
+                                <li>Available breakfast</li> 
+                                 <li>Available lunch</li>
+                                 <li>Available dinner</li>
+                                  <li>Delivery Time</li>
+                                   <li>Payment Method</li>
+                              </ol>
+                            </div>
+                    </div>
+
+                    <!-- User input box -->
+                    <div class="chat-bar-input-block">
+                        <div id="userInput">
+                            <input id="textInput" class="input-box" type="text" name="msg"
+                                placeholder="Tap 'Enter' to send a message">
+                            <p></p>
+                        </div>
+
+                        <div class="chat-bar-icons">
+                                <i class="fa-solid fa-heart"></i>
+                                <i class="fa-regular fa-paper-plane" onclick="sendButton()"></i>
+                        </div>
+                    </div>
+
+                    <div id="chat-bar-bottom">
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./chatResponse.js"></script>
+<script src="./chatbox.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./shop.js"></script>
