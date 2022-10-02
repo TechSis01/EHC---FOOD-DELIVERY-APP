@@ -1,0 +1,647 @@
+/*UNIVERSAL STYLES*/
+html{
+    font-size:62.5%;
+}
+body{
+    font-size:1.6rem;
+    margin:0 1%;
+    padding:0;
+    font-family: 'Montserrat', sans-serif;
+    position:relative;
+    width:100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/*================NAVIGATION STYLES=================*/
+
+nav{
+    margin:2% 4%;
+    font-family: 'Oswald', sans-serif;
+  
+}
+.first-navigation-bar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.first-navigation-bar-content{
+    display:flex;
+    align-items: center;
+    word-spacing: 2px;
+}
+.mobile-2{
+     display:none; 
+}
+.first-navigation-bar-content h2{
+    letter-spacing: 3px;
+}
+.first-navigation-bar-content i{
+    color:#ffc139;
+    margin-right:10px;
+}
+.second-navigation-bar{
+    display:flex;
+    justify-content: space-around;
+    margin-top:2%;
+    position:sticky;
+    top:10px;
+}
+.second-navigation-bar ul{
+    display:flex;
+    width:60%;
+    margin:0% auto;
+    justify-content: space-around;
+    align-items: center;
+}
+.second-navigation-bar ul li{
+    list-style: none;
+}
+.second-navigation-bar ul li a{
+    text-decoration: none;
+    color:#333333;
+}
+.second-navigation-bar ul li a:hover{
+    color:#ffc139
+}
+.nav-social-icons{
+    width:25%;
+    margin-left:20px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-social-icons a{
+    color:#333333;
+}
+.nav-social-icons a:hover{
+    color:#ffc139;
+}
+.nav-search{
+    width:35%;
+    /* margin-left:5%; */
+    word-spacing: 20px;
+    cursor:pointer;
+    color:#333333;
+}
+.fa-cart-shopping:hover{
+    color:#ffc139;
+}
+.socials-search-container{
+    display:flex;
+    width:20%;
+    justify-content: space-between;
+}
+/*===================================Yellow bar that contains the choosen food =======================*/
+
+.background-heading-container{
+    padding:1% 0%;
+    background-color:#ffc139;
+    margin:2% 2%;
+}
+#header{
+    text-align: center;
+}
+
+
+/*===================================PRODUCTS DISPLAY CONTAINER==============================*/
+.outer-product-container{
+    display:flex;
+    padding-top:3%;
+    max-height:1500px;
+}
+.hamburger{
+    margin:15px 0px 15px 15px;
+    display:none;
+}
+.line{
+    margin-top:5px;
+    width:30px;
+    height:1px;
+    background-color:black;
+}
+.option-1{
+    display:flex;
+    background-color: #f8f9fa;
+    justify-content: space-around;
+    align-items: center;
+    cursor:pointer;
+    margin-bottom:7%;
+    border-radius: 5px;
+}
+
+.option-1:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.burger,.pizza{
+    padding:6% 0%;
+}
+
+.option-1 img{
+    width:90px;
+    
+}
+.free-burger{
+    background-color: #ffc139;
+    padding-bottom:5%;
+    border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+ .coffee-image{
+    width:320px;
+} 
+.display-products-container{
+   width:100%;
+    display:grid;
+   grid-template-columns: 1fr 1fr 1fr; 
+
+    margin-left:1%;
+}
+.product-image{
+    width:250px;
+    border-radius: 10px;
+    z-index:100;
+}
+.more-buttons-container{
+    width:10%;
+    margin:0 auto;
+}
+.next-btn{
+    padding:1% 2%;
+    outline:none;
+    border-color: #ffc139;
+    border-width:1px;
+    background-color: white;
+    cursor:pointer;
+    color:#333333;
+    border-radius: 5px;
+}
+.next-btn:hover{
+    background-color: #ffe97f;
+}
+.free-drink-container{
+    display:flex;
+    justify-content: center;
+    margin-left:20%;
+}
+.free-drink-container h3{
+    align-self: flex-end;
+   
+    font-size:3.6rem;
+    font-weight: 400;
+    color:#333333;
+    position:relative;
+    top:30px;
+    right:50px;
+    letter-spacing: 5px;
+}
+ .order-now{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+} 
+.order-now h5{
+    font-size:2.0rem; 
+    font-weight: 400;
+    letter-spacing: 0.1px;
+}
+.order-now button{
+    background-color: #333333;
+    padding:3% 9%;
+    color:white;
+    outline:0;
+    border:1px solid #333333;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    transition:0.2s ease-in;
+}
+.order-now button:hover{
+    background-color: white;
+    color:#ffc139;
+    font-weight: bold;
+    border-color: white;
+    cursor:pointer;
+}
+.food-products{
+    /* background-color: rgb(122, 92, 92); */
+    justify-self: center;
+    align-self: center;
+    padding:5% 4%;
+    position:relative;
+    transition:transform 5s ease; 
+   overflow: hidden;
+    
+}
+.product-image:hover{
+    /* transition:all 0.6s ease-in; */
+    opacity:0.6;
+   
+    box-shadow: rgba(0, 0, 0, 0.125) 0px 5px 15px;;
+}
+.food-products:hover .price-container{
+    /* background-color: yellow; */
+     display:block; 
+    cursor:pointer;
+}
+
+.price-container{
+    /* animation-name: fade-in;
+    animation-duration:1s;
+    position:absolute; 
+    width:90%;
+    bottom:200px;
+    display:none; 
+    background-color:#ffc139; */
+}
+ @keyframes fade-in{
+    0%{opacity:0}
+    100%{opacity:1}
+}  
+.food-products p:nth-child(2) {
+    font-size:2.0rem;
+    font-family: 'Oswald', sans-serif;
+    color:#333333;
+}
+.food-products p:nth-child(3){
+    font-size:2.1rem;
+    font-family: 'Oswald', sans-serif;
+    color:#ffc139;
+}
+.price-container button{
+   background-color: #ffc139;
+   width:90%;
+   margin:0 auto;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   outline:none;
+   border:none;
+   padding:4% 0%;
+   font-family: 'Montserrat', sans-serif;
+   border-radius: 20px;
+   cursor:pointer;
+}
+.price-container button:hover{
+    background-color: #333333;
+    color:#ffc139;
+   
+}
+
+
+
+/* ==========================================FOOTER===================================== */
+#footer{
+    display: flex;
+    justify-content: space-between;
+    line-height: 2;
+    letter-spacing: 2px;
+}
+#update-paragraph{
+    width:70%;
+}
+.Contact-section{
+    width:40%;
+}
+.Contact{
+    display:flex;
+    align-items: center; 
+}
+.contact-content{
+    margin-left:5%;
+}
+.phone-number{
+    font-size:2.5rem;
+    font-weight:bold;
+    font-family: 'Oswald', sans-serif;
+}
+.phone-number:hover{
+    color:#ffc139;
+    cursor:pointer;
+}
+.phone-icon{
+    font-size:2.5rem;
+    color:#ffc139;
+}
+.phone-icon:hover{
+   
+    cursor:pointer;
+}
+.input-field{
+    display:flex;
+    background-color:white;
+    width:65%;
+    padding:2% 2%;
+    justify-content: space-between;
+    border-radius: 30px;
+    align-items: center;
+    border:1px solid rgb(243, 235, 235);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#email{
+    width:80%;
+    height:10px;
+    padding:2% 1%;
+    outline:none;
+    border:none;
+    font-family: 'Montserrat', sans-serif;
+    font-size:1.5rem;
+}
+.footer-socials{
+    margin-top:5%;
+}
+.footer-socials a{
+    font-size:2.5rem;
+    color:#333333;
+}
+.footer-socials a:hover{
+    color:#ffc139;
+}
+
+
+
+/* MEDIA QUERIES */
+/* MOBILE PHONE SCREENS */
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+    .first-navigation-bar{
+        flex-direction: column;
+    }
+    .mobile{
+        display:none;
+    }
+    .hamburger{
+        display:unset;
+    }
+    .first-navigation-bar-content h2{
+       font-size:2.0rem;
+    }
+    .mobile-2{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        width:55%;
+        text-align: right;
+        margin-right:50px;
+    }
+    #burger-logo{
+        width:50px;
+    }
+    .address{
+        margin-left:7%;
+    }
+    .second-navigation-bar{
+        flex-direction: column;
+    }
+    .socials-search-container{
+        width:100%;
+        justify-content: space-between;
+        margin:6% 0%;
+    }
+    .second-navigation-bar ul{
+        width:80%;
+    }
+    .nav-search{
+        margin-left:20px;
+    }
+    #header{
+        font-size:1.8rem;
+    }
+    .product-option-container{
+        width:100%;
+        background-color: #f8f9fa;
+        position:absolute;
+        transition:0.5s ease-in;
+        transform:translateX(-530px);
+        z-index:900;
+    }
+    /* .display-products-container{
+        grid-template-columns: 1fr;
+    } */
+    .background-heading-container{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-left:2%;
+        margin-bottom:5%;
+    }
+    #footer{
+        flex-direction: column;
+        align-items: center;
+        margin-left:10%;
+        margin-top:25%;
+        font-size:1.4rem;
+    }
+    #footer h1{
+        font-size:1.6rem;
+    }
+    #footer h2{
+        font-size:1.6rem;
+    }
+    .Contact-section{
+        width:100%;
+    }
+    .outer-product-container{
+        max-height:none;
+    }
+    .display-products-container{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-image{
+        width:300px;
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 481px){
+    /* .first-navigation-bar{
+        flex-direction: column;
+    } */
+    nav{
+        margin-left:10%;
+    }
+    .hamburger{
+        display:unset;
+    }
+    .mobile{
+       
+    }
+    .first-navigation-bar-content h2{
+       font-size:2.0rem;
+    }
+    /* .mobile-2{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        width:52%;
+        text-align: right;
+        margin-right:50px;
+    } */
+    #burger-logo{
+        width:50px;
+    }
+    .address{
+        margin-left:7%;
+    }
+    .second-navigation-bar{
+        flex-direction: column;
+    }
+    .socials-search-container{
+        width:120%;
+        justify-content: space-between;
+        margin:6% 0%;
+    }
+    .second-navigation-bar ul{
+        width:80%;
+    }
+    .nav-search{
+        margin-left:30px;
+    }
+    #header{
+        font-size:2.0rem;
+    }
+    .product-option-container{
+        width:120%;
+        background-color: #f8f9fa;
+        position:absolute;
+        transition:0.5s ease-in;
+        transform:translateX(-930px); 
+         z-index:900;
+    }
+    /* .display-products-container{
+        grid-template-columns: 1fr 1fr;
+    } */
+    .background-heading-container{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-left:12%;
+        margin-bottom:5%;
+    }
+    .coffee-image{
+      margin-left:30%;
+    }
+    .free-drink-container{
+        margin-left: 0%;
+    }
+    #footer{
+        /* flex-direction: column; */
+        align-items: center;
+        margin-left:10%;
+        /* margin-top:25%; */
+    }
+    .Contact-section{
+        margin-top:15%;
+        width:100%;
+    }
+    .outer-product-container{
+        max-height:none;
+    }
+     .display-products-container{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-left:6%;
+    } 
+    .product-image{
+        width:300px;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px){
+     /* .first-navigation-bar{
+        flex-direction: column;
+    } */
+    nav{
+        margin-left:10%;
+    }
+    .hamburger{
+       display:none;
+    }
+    .first-navigation-bar-content h2{
+       font-size:2.0rem;
+    }
+    /* .mobile-2{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        width:52%;
+        text-align: right;
+        margin-right:50px;
+    } */
+    #burger-logo{
+        width:50px;
+    }
+    .address{
+        margin-left:7%;
+    }
+    .second-navigation-bar{
+        flex-direction: column;
+    }
+    .socials-search-container{
+        width:100%;
+        justify-content: space-between;
+        margin:6% 10%;
+    }
+    .second-navigation-bar ul{
+        width:80%;
+    }
+    .nav-search{
+        margin-left:30px;
+    }
+    #header{
+        font-size:2.0rem;
+    }
+    .product-option-container{
+        width:80%;
+        margin-left:3%;
+        padding:2px 5px;
+        /* background-color: #f8f9fa; */
+        /* position:absolute;
+        transition:0.5s ease-in;
+        transform:translateX(-930px); 
+         z-index:900; */
+    }
+    .display-products-container{
+        grid-template-columns: 1fr 1fr;
+        gap:100px;
+        margin-left:5%;
+    }
+    .background-heading-container{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-left:12%;
+        margin-bottom:5%;
+    }
+    #footer{
+        flex-direction: column;
+        align-items: center;
+        margin-left:10%;
+        margin-top:5%;
+        justify-content: space-around;
+        font-size: 1.7rem;
+    }
+    .Contact-section{
+         margin-top:10%; 
+        width:100%;
+    }
+    .outer-product-container{
+        max-height:2500px;
+    }
+     /* .display-products-container{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-left:6%;
+    }  */
+    .product-image{
+        width:200px;
+    }
+}
+
+.burger-active{
+    transition:0.5s ease-in;
+    transform:translateX(0px);
+}
