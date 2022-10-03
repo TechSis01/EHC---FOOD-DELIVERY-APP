@@ -1,108 +1,95 @@
-const form = document.querySelector('form');
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const lname = document.getElementById('lname');
+const email = document.getElementById('email');
+const address = document.getElementById('address');
+const town = document.getElementById('town');
+const number = document.getElementById('number');
 
-function insertAfter(newNode, referenceNode) {
-  this.insertBefore(newNode, referenceNode.nextElementSibling);
-  
-  return newNode;
-}
 
-class FieldValidator {
-  constructor(field) {
-    this._field = field;
-    this._error = null;
-    
-    this._onInvalid = this._onInvalid.bind(this);
-    this._onInput = this._onInput.bind(this);
-    this._onBlur = this._onBlur.bind(this);
-    
-    this.bindEventListeners();
-  }
-  
-  bindEventListeners() {
-    this._field.addEventListener('invalid', this._onInvalid);
-    this._field.addEventListener('input', this._onInput);
-    this._field.addEventListener('blur', this._onBlur);
-  }
-  
-  
-  showError() {
-    let errorNode;
-    
-    if (this._error !== null) {
-      return this.updateError();
-    }
-    
-    this._error = document.createElement('div');
-    this._error.className = 'help-block';
-    this._error.innerHTML = this._field.validationMessage;
-    
-    this._field.setAttribute('aria-invalid', 'true');
-    this._field.closest('.form-group').classList.add('has-error');
-    
-    insertAfter.call(this._field.parentNode, this._error, this._field);
-  }
-  
-  
-  updateError() {
-    if (this._error === null) return;
-    
-    this._error.innerHTML = this._field.validationMessage;
-  }
-  
-  
-  hideError() {
-    if (this._error !== null) {
-      this._error.parentNode.removeChild(this._error);
-      this._error = null;
-    }
+form.addEventListener('submit', e => {
+    //e.preventDefault();
+	checkInputs();
+});
 
-    this._field.removeAttribute('aria-invalid');
-    this._field.closest('.form-group').classList.remove('has-error');
-  }
-  
-  
-  _onInvalid(event) {
-    event.preventDefault();
-  }
-  
-  
-  _onInput(event) {
-    if (this._field.validity.valid) {
-      this.hideError();
-    } else {
-      this.updateError();
-    }
-  }
-  
-  
-  _onBlur(event) {
-    if ( ! this._field.validity.valid) {
-      this.showError();
-    }
+
+ function validateForm() {
+  let x = document.forms["myForm"]["username"].value;
+  if (x == "") {
+    alert("Blank spaces must be filled out");
+    return false;
   }
 }
 
-Array.prototype.slice.call(form.elements).forEach((element) => {
-  element._validator = new FieldValidator(element);
-});
 
-form.setAttribute('novalidate', true);
+function checkInputs() {
 
-form.addEventListener('invalid', (event) => {
-  event.preventDefault();
-  
-  event.target._validator.showError();
-}, true);
+	const usernameValue = username.value.trim();
+	const lnameValue = lname.value.trim();
+	const emailValue = email.value.trim();
+	const addressValue = address.value.trim();
+	const townValue = town.value.trim();
+	const numberValue = number.value.trim();
+	
+	if(usernameValue === '') {
+		setErrorFor(username, 'Fill in blank');
+	} else {
+		setSuccessFor(username);
+	}
+	
+	if(emailValue === '') {
+		setErrorFor(email, 'Email cannot be blank');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email');
+	} else {
+		setSuccessFor(email);
+	}
+
+	if (addressValue === '') {
+		setErrorFor(address, 'Address cannot be blank');
+	} else {
+		setSuccessFor(address);
+	}
+	
+	if (townValue === '') {
+		setErrorFor(town, 'Town cannot be blank');
+	} else {
+		setSuccessFor(town);
+	}
+
+	  if (numberValue === '') {
+		setErrorFor (number, 'number cannot be blank');
+	  }
+	  else {
+		setSuccessFor(number);
+	}
+	if (lnameValue === '') {
+		setErrorFor (lname, 'Please fill in blank');
+	} else {
+		setSuccessFor(lname);
+	}
+}
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+}
+	
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
 
 
-form.addEventListener('submit', (event) => {
-  if ( ! form.checkValidity()) {
-    event.preventDefault();
-    
-    form.querySelectorAll(':invalid')[0].focus();
-    return;
-  }
-  
-  console.log('submit');
-  event.preventDefault();
-});
+
+
+
+
+
+
